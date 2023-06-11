@@ -155,7 +155,7 @@ body {
 .second-heading {
     font-size: 3rem;
     margin: 1.5rem;
-    text-decoration: dotted;
+    border-bottom: 2px dashed;
 }
 
 .repo-input {
@@ -167,11 +167,15 @@ body {
 }
 
 #repo-sort-items {
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'Gentium Book Plus', serif;
-    margin: 0 1rem;
+    margin: 1rem;
     width: 10rem;
-    height: 5rem;
+    height: 3.5rem;
+    background: #ddebfb;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 1rem;
 }
 
 #repo-info-container {
