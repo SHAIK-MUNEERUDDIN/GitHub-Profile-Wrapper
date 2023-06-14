@@ -13,6 +13,12 @@
         font-size: 4rem;
     }
 
+    .user-avatar {
+        width: 13rem;
+        height: 13rem;
+        border: 4px solid green;
+    }
+
     #input {
         width: 35rem;
         font-size: 2rem;
