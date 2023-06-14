@@ -12,7 +12,7 @@ userInput.addEventListener("input", function () {
 
 submitButton.addEventListener("click", () => {
     inputSection.style.display = "none";
-    personalInfoDiv.style.display = "block";
+    personalInfoDiv.style.display = "flex";
     repoDiv.style.display = "block";
     profileInfo();
     repoInfo();
