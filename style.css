@@ -120,10 +120,12 @@ body {
 
 .profile-stats {
     display: flex;
+    flex-wrap: wrap;
     font-size: 1.5rem;
     font-weight: lighter;
     text-align: center;
     gap: 3rem;
+    justify-content: center;
 }
 
 .ps-card {
