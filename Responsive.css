@@ -9,6 +9,15 @@
         font-size: 52%;
     }
 
+    .main-heading {
+        font-size: 4rem;
+    }
+
+    #input {
+        width: 35rem;
+        font-size: 2rem;
+    }
+
     #repo-info {
         margin: 2rem;
         padding: 1rem;
