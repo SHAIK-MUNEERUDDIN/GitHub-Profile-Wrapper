@@ -233,3 +233,40 @@ body {
     flex-direction: row;
     gap: 2rem;
 }
+
+
+
+.footer .credit {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "Nunito", sans-serif !important;
+    font-weight: 600;
+    color: #fff;
+    background-color: black;
+    text-transform: capitalize;
+}
+
+.footer .credit a {
+    color: yellow;
+    text-decoration: none;
+}
+
+.footer .fa-heart {
+    color: #e90606;
+    margin: 0 0.3rem;
+    font-size: 1.5rem;
+    animation: pound 0.35s infinite alternate;
+}
+
+@-webkit-keyframes pound {
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes pound {
+    to {
+        transform: scale(1.1);
+    }
+}
