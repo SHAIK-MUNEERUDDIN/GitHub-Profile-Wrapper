@@ -139,13 +139,13 @@ body {
 
 #repo-info-wrapper {
     background-color: rgb(26, 30, 34);
-    height: 80rem;
+    height: 100%;
     width: 100%;
     display: none;
 }
 
 #repo-info {
-    margin: 5rem;
+    margin: 5rem 5rem 2rem 5rem;
     padding: 2rem;
     background-color: #f6f8fa;
 }
@@ -240,7 +240,7 @@ body {
     padding: 1rem 0;
     text-align: center;
     font-size: 1.5rem;
-    font-family: "Nunito", sans-serif !important;
+    font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
     color: #fff;
     background-color: black;
