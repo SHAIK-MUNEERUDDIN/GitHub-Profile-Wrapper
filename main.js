@@ -5,6 +5,7 @@ const personalInfoDiv = document.getElementById("personal-info-wrapper");
 const inputSection = document.getElementById("main");
 const repoInfoDiv = document.getElementById("repo-info-container");
 const repoDiv = document.getElementById("repo-info-wrapper");
+const credit = document.getElementsByClassName("credit")[0];
 
 userInput.addEventListener("input", function () {
     userName = userInput.value;
@@ -14,6 +15,7 @@ submitButton.addEventListener("click", () => {
     inputSection.style.display = "none";
     personalInfoDiv.style.display = "flex";
     repoDiv.style.display = "block";
+    credit.style.background = "#1a1e22"
     profileInfo();
     repoInfo();
 })
