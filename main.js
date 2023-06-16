@@ -15,6 +15,15 @@ userInput.addEventListener("input", function () {
     userName = userInput.value;
 })
 
+
+document.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        submitButton.click();
+        console.log("hello")
+    }
+});
+
 submitButton.addEventListener("click", () => {
     inputSection.style.display = "none";
     personalInfoDiv.style.display = "flex";
