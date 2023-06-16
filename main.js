@@ -7,6 +7,10 @@ const repoInfoDiv = document.getElementById("repo-info-container");
 const repoDiv = document.getElementById("repo-info-wrapper");
 const credit = document.getElementsByClassName("credit")[0];
 
+const selectField = document.getElementById("repo-sort-items");
+
+
+
 userInput.addEventListener("input", function () {
     userName = userInput.value;
 })
@@ -20,6 +24,9 @@ submitButton.addEventListener("click", () => {
     repoInfo();
 })
 
+selectField.addEventListener("change", () => {
+    repoInfo();
+});
 
 
 function profileInfo() {
@@ -36,7 +43,6 @@ function profileInfo() {
 
 
 
-            console.log(data);
             personalInfoDiv.innerHTML = `
     <div id="personal-info">
     <div class="user-avatar">
@@ -54,6 +60,12 @@ function profileInfo() {
     </div>
     </div>`
         })
+
+        .catch((error) => {
+            // Handle the error gracefully
+            console.log("Error fetching profile information:", error);
+            personalInfoDiv.innerHTML = `<h3 class="alert">Error fetching profile information. Please try again.</p>`;
+        });
 }
 
 
@@ -62,7 +74,21 @@ function repoInfo() {
     fetch(`https://api.github.com/users/${userName}/repos`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
+
+            // Get the selected option value
+            const selectedOption = selectField.value;
+
+            // Sort the data based on the selected option
+            let sortedData;
+            if (selectedOption === "stars") {
+                sortedData = data.sort((a, b) => b.stargazers_count - a.stargazers_count);
+            } else if (selectedOption === "forks") {
+                sortedData = data.sort((a, b) => b.forks_count - a.forks_count);
+            } else if (selectedOption === "size") {
+                sortedData = data.sort((a, b) => b.size - a.size);
+            }
+
+            repoInfoDiv.innerHTML = "";
 
             for (let i = 0; i < data.length; i++) {
                 let forkInfo = data[i].fork ? " / Forked" : "";
@@ -93,4 +119,10 @@ function repoInfo() {
                 `;
             }
         })
+
+        .catch((error) => {
+            // Handle the error gracefully
+            console.log("Error fetching repository information:", error);
+            repoInfoDiv.innerHTML = `<h3 class="alert">Error fetching repository information. Please try again.</h3>`;
+        });
 }
