@@ -41,7 +41,8 @@ function profileInfo() {
         </div>
         `;
 
-      chartContainerDiv.innerHTML = `        
+      chartContainerDiv.innerHTML = ` 
+      <div id="chart-wrapper">       
         <div class="chart-box">
           <div class="chart-heading"><h1>Top Languages</h1></div>
           <div class="chart-display">
@@ -62,6 +63,7 @@ function profileInfo() {
             <canvas id="chart-3"></canvas>
           </div>
         </div>
+      </div>
         `;
     })
     .catch((error) => {
@@ -97,7 +99,7 @@ function repoInfo() {
         if (repo.fork) {
           return;
         }
-        const language = repo.language || "Unknown";
+        const language = repo.language || "Others";
 
         if (mostUsedLanguages[language]) {
           mostUsedLanguages[language]++;
@@ -166,7 +168,7 @@ document.addEventListener("keypress", function (event) {
 });
 
 submitButton.addEventListener("click", () => {
-  chartContainerDiv.style.display = "grid";
+  chartContainerDiv.style.display = "block";
   inputSection.style.display = "none";
   personalInfoDiv.style.display = "flex";
   repoDiv.style.display = "block";
@@ -184,7 +186,6 @@ function prepareStats() {
   console.log(mostUsedLanguages);
   console.log(mostStarredRepos);
   console.log(starsPerLanguage);
-
   const languageColors = {
     Mercury: "#ff2b2b",
     TypeScript: "#2b7489",
@@ -403,7 +404,7 @@ function prepareStats() {
   //   if (chart2) chart2.destroy();
   //   if (chart3) chart3.destroy();
 
-  //Re-rendering of charts repositories are getting sorted
+  //Avoid Re-rendering of charts repositories are getting sorted
   if (chart1) return;
 
   // Dataset for chart-1 (bar chart)

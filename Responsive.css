@@ -23,9 +23,25 @@
     width: 35rem;
     font-size: 2rem;
   }
-
+  #chart-container {
+    margin: 0 2rem;
+  }
   #repo-info {
-    margin: 2rem;
+    margin: 0 2rem 2rem;
     padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #chart-container {
+    padding: 2rem 2rem 0;
+  }
+
+  #chart-wrapper {
+    margin-top: -8rem !important;
+  }
+  .chart-box {
+    max-width: fit-content;
+    height: 45rem;
   }
 }
